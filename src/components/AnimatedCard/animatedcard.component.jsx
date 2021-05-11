@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./animatedcard.styles.css";
 import { motion } from "framer-motion";
 
 export default function AnimatedCard(props) {
     const { color, previewLogoSrc, logoSrc, internshipRole, internshipDuration, internshipDescription } = props;
-    const transitionDuration = 2;
-    const transitionDelay = 1;
+    const transitionDuration = 0.8;
+    const transitionDelay = 0;
+
+    const [rotation, setRotation] = useState(0);
+
     return (
         <div className="flip-card">
             <motion.div
                 className="flip-card-front"
-                initial={{ rotateY: 180 }}
-                animate={{ rotateY: 0 }}
+                initial={{ rotateY: 180 - rotation }}
+                animate={{ rotateY: rotation }}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
+                onHoverStart={ () => setRotation(180) }
+                onHoverEnd={ () => setRotation(0) }
             >
                 <div className="internship-company">
                     <img src={logoSrc} alt="Devfolio" />
@@ -36,9 +41,11 @@ export default function AnimatedCard(props) {
             <motion.div
                 className="flip-card-back"
                 style={{ backgroundColor: color }}
-                initial={{ rotateY: 0 }}
-                animate={{ rotateY: -180 }}
+                initial={{ rotateY: rotation }}
+                animate={{ rotateY: rotation - 180 }}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
+                onHoverStart={ () => setRotation(180) }
+                onHoverEnd={ () => setRotation(0) }
             >
                 <img src={previewLogoSrc} alt="Devfolio" />
             </motion.div>

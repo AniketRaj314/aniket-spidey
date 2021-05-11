@@ -7,7 +7,7 @@ export const InternshipData = [
         internshipRole: "Community and Operations Associate",
         internshipDuration: "Dec '20 - Mar '21",
         internshipDescription:
-            "Devfolio is a platform for hackathon enthusiasts as well as organizers as well. They are India's largest and fastest growing community of builders.",
+            "My primary responsibility was to ensure that the Dev Community gets the best hackathon experience.",
     },
     {
         color: "#6F389F",
@@ -17,7 +17,7 @@ export const InternshipData = [
         internshipRole: "Full Stack Engineer / CA",
         internshipDuration: "Jan '20 - Jan '21",
         internshipDescription:
-            "bitgrit is an AI competition and recruiting platform for data scientists, home to a community of 25,000+ engineers worldwide.",
+            "As an engineer, we researched and worked on Kubernetes.",
     },
     {
         color: "#4691F0",
