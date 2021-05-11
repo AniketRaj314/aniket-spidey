@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 
 export default function AnimatedCard(props) {
     const { color, previewLogoSrc, logoSrc, internshipRole, internshipDuration, internshipDescription } = props;
+    const transitionDuration = 2;
+    const transitionDelay = 1;
     return (
         <div className="flip-card">
             <motion.div
                 className="flip-card-front"
                 initial={{ rotateY: 180 }}
                 animate={{ rotateY: 0 }}
-                transition={{ duration: 2, delay: 0.5 }}
+                transition={{ duration: transitionDuration, delay: transitionDelay }}
             >
                 <div className="internship-company">
                     <img src={logoSrc} alt="Devfolio" />
@@ -36,7 +38,7 @@ export default function AnimatedCard(props) {
                 style={{ backgroundColor: color }}
                 initial={{ rotateY: 0 }}
                 animate={{ rotateY: -180 }}
-                transition={{ duration: 2, delay: 0.5 }}
+                transition={{ duration: transitionDuration, delay: transitionDelay }}
             >
                 <img src={previewLogoSrc} alt="Devfolio" />
             </motion.div>
