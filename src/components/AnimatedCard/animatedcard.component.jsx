@@ -3,9 +3,20 @@ import "./animatedcard.styles.css";
 import { motion } from "framer-motion";
 
 export default function AnimatedCard(props) {
-    const { color, previewLogoSrc, logoSrc, internshipRole, internshipDuration, internshipDescription } = props;
+    const {
+        color,
+        previewLogoSrc,
+        logoSrc,
+        internshipRole,
+        internshipDuration,
+        internshipDescription,
+        website,
+        name,
+    } = props;
     const transitionDuration = 0.8;
     const transitionDelay = 0;
+
+    const internshipDescriptionList = internshipDescription.split(";");
 
     const [rotation, setRotation] = useState(0);
 
@@ -16,11 +27,13 @@ export default function AnimatedCard(props) {
                 initial={{ rotateY: 180 - rotation }}
                 animate={{ rotateY: rotation }}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
-                onHoverStart={ () => setRotation(180) }
-                onHoverEnd={ () => setRotation(0) }
+                onHoverStart={() => setRotation(180)}
+                onHoverEnd={() => setRotation(0)}
             >
                 <div className="internship-company">
-                    <img src={logoSrc} alt="Devfolio" />
+                    <a href={website} target="_blank" rel="noreferrer">
+                        <img src={logoSrc} alt={name} />
+                    </a>
                 </div>
                 <hr />
                 <div className="internship-role">
@@ -35,7 +48,11 @@ export default function AnimatedCard(props) {
                 <hr />
                 <div className="internship-tags">
                     <h2>📝 Description</h2>
-                    <p>{internshipDescription}</p>
+                    <ul key={`${name}-list`}>
+                        {internshipDescriptionList.map((listItem, index) => (
+                            <li key={`${name}-${index}`}>{listItem}</li>
+                        ))}
+                    </ul>
                 </div>
             </motion.div>
             <motion.div
@@ -44,10 +61,12 @@ export default function AnimatedCard(props) {
                 initial={{ rotateY: rotation }}
                 animate={{ rotateY: rotation - 180 }}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
-                onHoverStart={ () => setRotation(180) }
-                onHoverEnd={ () => setRotation(0) }
+                onHoverStart={() => setRotation(180)}
+                onHoverEnd={() => setRotation(0)}
             >
-                <img src={previewLogoSrc} alt="Devfolio" />
+                <a href={website} target="_blank" rel="noreferrer">
+                    <img src={previewLogoSrc} alt={name} />
+                </a>
             </motion.div>
         </div>
     );

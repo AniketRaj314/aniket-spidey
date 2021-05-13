@@ -6,8 +6,9 @@ export const InternshipData = [
         logoSrc: "/images/devfolio-text.png",
         internshipRole: "Community and Operations Associate",
         internshipDuration: "Dec '20 - Mar '21",
+        website: "https://devfolio.co/home",
         internshipDescription:
-            "My primary responsibility was to ensure that the Dev Community gets the best hackathon experience.",
+            "Organize Devfolio Hackathons;Onboard organizers to the platform;Manage Internal Operations",
     },
     {
         color: "#6F389F",
@@ -16,8 +17,8 @@ export const InternshipData = [
         logoSrc: "/images/bitgrit-text.png",
         internshipRole: "Full Stack Engineer / CA",
         internshipDuration: "Jan '20 - Jan '21",
-        internshipDescription:
-            "As an engineer, we researched and worked on Kubernetes.",
+        website: "https://bitgrit.net",
+        internshipDescription: "Conduct workshops on ML/DS/Blockchain as a Speaker;Research and work on Kubernetes",
     },
     {
         color: "#4691F0",
@@ -26,6 +27,27 @@ export const InternshipData = [
         logoSrc: "/images/apli-text.png",
         internshipRole: "Frontend Engineer",
         internshipDuration: "Feb '20 - May '20",
-        internshipDescription: "Some dummy Text",
+        website: "https://apli.ai",
+        internshipDescription: "Frontend Web Dev;Product Level Conceptualisation;Mobile App Design",
+    },
+    {
+        color: "#013C8A",
+        name: "boi",
+        previewLogoSrc: "/images/boi.png",
+        logoSrc: "/images/boi-text.png",
+        internshipRole: "Data Analyst",
+        internshipDuration: "June '19 - July '19",
+        website: "https://www.bankofindia.co.in/",
+        internshipDescription: "Build an NPA Modelling Software to assess and predict risky accounts",
+    },
+    {
+        color: "#1F1F1F",
+        name: "idealake",
+        previewLogoSrc: "/images/idealake.svg",
+        logoSrc: "/images/idealake.svg",
+        internshipRole: "Web Developer",
+        internshipDuration: "June '18 - July '18",
+        website: "https://www.idealake.com/",
+        internshipDescription: "Training for fullstack engineer;On-site project experience in Frontend",
     },
 ];

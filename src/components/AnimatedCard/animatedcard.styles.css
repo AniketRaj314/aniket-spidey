@@ -1,11 +1,10 @@
-p {
-    font-size: 14px;
-    font-weight: 500;
+ul {
+    padding: 0px 12px;
     margin-top: -8px;
 }
 
-h2 {
-    font-size: 120%;
+p {
+    margin-top: -8px;
 }
 
 .flip-card {
@@ -42,7 +41,7 @@ h2 {
 }
 
 .flip-card-back img {
-    width: 80px;
+    width: 100px;
 }
 
 .internship-company {

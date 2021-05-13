@@ -1,15 +1,19 @@
 import React from "react";
 import { InternshipData } from "data";
 import AnimatedCard from "components/AnimatedCard/animatedcard.component";
+import { AiOutlineUp } from "react-icons/ai";
 import "./internships.styles.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 class Internships extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            internshipGroups: null
-        }
+            internshipGroups: null,
+            rotation: 0,
+            displayInternships: true,
+        };
     }
 
     componentDidMount() {
@@ -20,23 +24,46 @@ class Internships extends React.Component {
             internshipArray.push(InternshipData.splice(0, size));
         }
 
-        this.setState({internshipGroups: internshipArray});
+        this.setState({ internshipGroups: internshipArray });
     }
 
     render() {
-        const { internshipGroups } = this.state;
+        const { internshipGroups, rotation, displayInternships } = this.state;
         return (
-            internshipGroups && <div className="internship-section">
-                {internshipGroups.map((internshipGroup, parentIndex) => (
-                    <div className="internship-row" key={`row-${parentIndex}`}>
-                        {
-                            internshipGroup.map((internship) => (
-                                <AnimatedCard key={`internship-${internship.name}`} {...internship} />
-                            ))
-                        }
+            internshipGroups && (
+                <div className="internship-section">
+                    <div className="title">
+                        <h1 className="title">Internships</h1>
+                        <motion.div
+                            animate={{
+                                rotateX: rotation,
+                            }}
+                            onClick={() =>
+                                this.setState({ rotation: rotation + 180, displayInternships: !displayInternships })
+                            }
+                        >
+                            <AiOutlineUp className="icon" />
+                        </motion.div>
                     </div>
-                ))}
-            </div>
+                    <hr />
+                    <AnimatePresence>
+                        {displayInternships &&
+                            internshipGroups.map((internshipGroup, parentIndex) => (
+                                <motion.div
+                                    className="internship-row"
+                                    key={`row-${parentIndex}`}
+                                    initial={{ y: -20 }}
+                                    animate={{ y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                >
+                                    {internshipGroup.map((internship) => (
+                                        <AnimatedCard key={`internship-${internship.name}`} {...internship} />
+                                    ))}
+                                </motion.div>
+                            ))}
+                    </AnimatePresence>
+                </div>
+            )
         );
     }
 }

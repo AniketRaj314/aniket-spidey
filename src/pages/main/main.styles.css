@@ -1,10 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
+h1,
 h2 {
     font-family: "Fira Code", monospace;
 }
 
-p {
+h2 {
+    font-size: 120%;
+}
+
+p,
+li {
     font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+h1.title {
+    color: white;
+}
+
+.icon {
+    color: white;
+    margin-left: 12px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+div.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
