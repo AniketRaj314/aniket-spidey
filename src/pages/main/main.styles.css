@@ -21,15 +21,19 @@ h1.title {
     color: white;
 }
 
+div.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title.clickable {
+    cursor: pointer;
+}
+
 .icon {
     color: white;
     margin-left: 12px;
     font-size: 25px;
     cursor: pointer;
-}
-
-div.title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }

@@ -32,15 +32,17 @@ class Internships extends React.Component {
         return (
             internshipGroups && (
                 <div className="internship-section">
-                    <div className="title">
+                    <div
+                        className="title clickable"
+                        onClick={() =>
+                            this.setState({ rotation: rotation + 180, displayInternships: !displayInternships })
+                        }
+                    >
                         <h1 className="title">Internships</h1>
                         <motion.div
                             animate={{
                                 rotateX: rotation,
                             }}
-                            onClick={() =>
-                                this.setState({ rotation: rotation + 180, displayInternships: !displayInternships })
-                            }
                         >
                             <AiOutlineUp className="icon" />
                         </motion.div>
