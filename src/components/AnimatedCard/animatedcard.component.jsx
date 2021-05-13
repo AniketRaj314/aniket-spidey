@@ -16,32 +16,28 @@ export default function AnimatedCard(props) {
     } = props;
     const transitionDuration = 0.8;
     const transitionDelay = 0;
-    const controls = useAnimation();
+    const controlFront = useAnimation();
+    const controlBack = useAnimation();
     const { ref, inView } = useInView();
     const [rotation, setRotation] = useState(0);
 
-    const cardFrontSideVariants = {
-        hidden: {
-            rotateY: 180 - rotation,
-        },
-        visible: {
-            rotateY: rotation,
-        },
-    };
-
-    const cardBackSideVariants = {
-        hidden: {
-            rotateY: rotation,
-        },
-        visible: {
-            rotateY: rotation - 180,
-        },
-    };
-
     useEffect(() => {
-        if (inView) controls.start("visible");
-        if (!inView) controls.start("hidden");
-    }, [controls, inView]);
+        if (inView) {
+            controlFront.start({
+                rotateY: rotation,
+            });
+            controlBack.start({
+                rotateY: rotation - 180,
+            });
+        } else {
+            controlFront.start({
+                rotateY: 180 - rotation,
+            });
+            controlBack.start({
+                rotateY: rotation,
+            });
+        }
+    }, [controlFront, controlBack, inView, rotation]);
 
     const internshipDescriptionList = internshipDescription.split(";");
 
@@ -50,10 +46,9 @@ export default function AnimatedCard(props) {
             <motion.div
                 ref={ref}
                 className="flip-card-front"
-                initial="hidden"
-                animate={controls}
+                initial={{ rotateY: 180 - rotation }}
+                animate={controlFront}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
-                variants={cardFrontSideVariants}
                 onHoverStart={() => setRotation(180)}
                 onTouchStart={() => setRotation(180)}
                 onHoverEnd={() => setRotation(0)}
@@ -88,10 +83,9 @@ export default function AnimatedCard(props) {
                 ref={ref}
                 className="flip-card-back"
                 style={{ backgroundColor: color }}
-                initial="hidden"
-                animate={controls}
+                initial={{ rotateY: 0 }}
+                animate={controlBack}
                 transition={{ duration: transitionDuration, delay: transitionDelay }}
-                variants={cardBackSideVariants}
                 onHoverStart={() => setRotation(180)}
                 onHoverEnd={() => setRotation(0)}
             >
