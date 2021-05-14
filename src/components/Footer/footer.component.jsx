@@ -30,7 +30,7 @@ const iconsVariant = {
     }),
     hover: {
         scale: 1.2,
-    }
+    },
 };
 
 const creditsVariant = {
