@@ -28,6 +28,9 @@ const iconsVariant = {
             duration: 1,
         },
     }),
+    hover: {
+        scale: 1.2,
+    }
 };
 
 const creditsVariant = {
@@ -73,6 +76,7 @@ export default function Footer() {
                         target="_blank"
                         custom={0}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                     >
@@ -84,6 +88,7 @@ export default function Footer() {
                         target="_blank"
                         custom={1}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                     >
@@ -95,6 +100,7 @@ export default function Footer() {
                         target="_blank"
                         custom={2}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                     >
@@ -106,6 +112,7 @@ export default function Footer() {
                         target="_blank"
                         custom={3}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                     >
@@ -117,6 +124,7 @@ export default function Footer() {
                         target="_blank"
                         custom={4}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                     >
@@ -128,6 +136,7 @@ export default function Footer() {
                         target="_blank"
                         custom={5}
                         initial="hidden"
+                        whileHover="hover"
                         animate={controls}
                         variants={iconsVariant}
                         download
