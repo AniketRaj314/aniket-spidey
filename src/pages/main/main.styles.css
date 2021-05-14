@@ -17,6 +17,11 @@ li {
     font-weight: 500;
 }
 
+a {
+    text-decoration: none;
+    color: lightblue;
+}
+
 h1.title {
     color: white;
 }
@@ -36,6 +41,13 @@ div.title {
     margin-left: 12px;
     font-size: 25px;
     cursor: pointer;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
 
 .container {
