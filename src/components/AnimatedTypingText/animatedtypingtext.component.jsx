@@ -16,24 +16,24 @@ const typingVariant = {
 };
 
 export default function AnimatedTypingText(props) {
-    const { children, fontSize, color } = props;
+    const { children, fontSize, color, reanimate } = props;
     const arr = children.split("");
 
     const { ref, inView } = useInView();
     const controls = useAnimation();
 
     useEffect(() => {
-        if (inView) {
+        if (inView && reanimate) {
             controls.start("visible");
         } else {
             controls.start("hidden");
         }
-    }, [controls, inView]);
+    }, [controls, inView, reanimate]);
 
     return (
         <p style={{ fontSize: fontSize, color: color }}>
             {arr.map((item, index) => (
-                <motion.span ref={ref} custom={index} variants={typingVariant} initial="hidden" animate={controls}>
+                <motion.span ref={ref} custom={index} variants={typingVariant} initial="hidden" animate={reanimate ? controls : "visible"}>
                     {item}
                 </motion.span>
             ))}

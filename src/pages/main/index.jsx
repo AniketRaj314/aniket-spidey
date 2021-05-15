@@ -12,7 +12,7 @@ class Main extends React.Component {
         return (
             <div className="flexbox">
                 <div className="container">
-                    <AnimatedTypingText fontSize="40px" color="whitesmoke">
+                    <AnimatedTypingText fontSize="40px" color="whitesmoke" reanimate>
                         The Website is still WIP! Check back soon ;)
                     </AnimatedTypingText>
                     <Background imagePath={"/images/background.jpg"} />
