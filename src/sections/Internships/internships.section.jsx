@@ -18,10 +18,10 @@ class Internships extends React.Component {
 
     componentDidMount() {
         let internshipArray = [];
-        const { size } = this.props;
+        const { rowSize } = this.props;
 
         while (InternshipData.length > 0) {
-            internshipArray.push(InternshipData.splice(0, size));
+            internshipArray.push(InternshipData.splice(0, rowSize));
         }
 
         this.setState({ internshipGroups: internshipArray });

@@ -33,7 +33,13 @@ export default function AnimatedTypingText(props) {
     return (
         <p style={{ fontSize: fontSize, color: color }}>
             {arr.map((item, index) => (
-                <motion.span ref={ref} custom={index} variants={typingVariant} initial="hidden" animate={reanimate ? controls : "visible"}>
+                <motion.span
+                    ref={ref}
+                    custom={index}
+                    variants={typingVariant}
+                    initial="hidden"
+                    animate={reanimate ? controls : "visible"}
+                >
                     {item}
                 </motion.span>
             ))}
