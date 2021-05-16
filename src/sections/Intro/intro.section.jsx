@@ -13,6 +13,14 @@ const emojiVariant = {
         originY: "100%",
         opacity: 1,
     },
+    hover: {
+        rotateZ: [0, -40, 0, -40, 0],
+        originX: "50%",
+        originY: "100%",
+        transition: {
+            delay: 0
+        }
+    }
 };
 
 export default function Intro() {
@@ -42,7 +50,7 @@ export default function Intro() {
                     <motion.span
                         initial="hidden"
                         animate="visible"
-                        whileHover="visible"
+                        whileHover="hover"
                         variants={emojiVariant}
                         className="wave-emoji"
                         transition={{ delay: 1.5 }}
