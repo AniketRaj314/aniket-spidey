@@ -51,3 +51,42 @@ export const InternshipData = [
         internshipDescription: "Training for fullstack engineer;On-site project experience in Frontend",
     },
 ];
+
+export const SkillsData = [
+    {
+        skill: "React",
+        logo: "/images/react.png",
+        description:
+            "Being a Frontend Engineer, React is my go-to library for Web Dev, along with supporting tools such as Redux Saga 💙",
+    },
+    {
+        skill: "Python",
+        logo: "/images/python.png",
+        description:
+            "Learning Python was an easy choice as its possibilities and scope are endless, including Backend Web Dev, ML/Data Science, etc.",
+    },
+    {
+        skill: "Other Languages",
+        logo: ["/images/cpp.png", "/images/js.jpg", "/images/java.png"],
+        description:
+            'I believe learning other languages is a part of the "learning how to learn" process. I covered few languages such as JAVA, JS, C++, etc. ',
+    },
+    {
+        skill: "The Fun Libraries!",
+        logo: ["/images/p5.png", "/images/impressjs.png", "/images/framer.png"],
+        description:
+            "p5.js for retro games, impress.js for aesthetic presentations, and other such libraries have kept me interested through my journey.",
+    },
+    {
+        skill: "Community Building",
+        logo: "/images/community.svg",
+        description:
+            "My experience in organizing professional hackathons, and hosting technical events have brought out the Community Builder in me.",
+    },
+    {
+        skill: "Tech-fluencing",
+        logo: "/images/mic.png",
+        description:
+            "Technical speaker at webinars, 100 Days of Code Challengee on Instagram and YouTube, and official student-teacher at my university.",
+    },
+];

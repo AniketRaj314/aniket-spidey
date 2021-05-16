@@ -18,9 +18,9 @@ const emojiVariant = {
         originX: "50%",
         originY: "100%",
         transition: {
-            delay: 0
-        }
-    }
+            delay: 0,
+        },
+    },
 };
 
 export default function Intro() {

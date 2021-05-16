@@ -7,6 +7,7 @@ import AnimatedTypingText from "components/AnimatedTypingText/animatedtypingtext
 
 import Internships from "sections/Internships/internships.section";
 import Intro from "sections/Intro/intro.section";
+import Skills from "sections/Skills/skills.section";
 
 import "./main.styles.css";
 
@@ -19,6 +20,7 @@ class Main extends React.Component {
                         Website is still WIP! Check back soon ;)
                     </AnimatedTypingText>
                     <Intro />
+                    <Skills />
                     <Background imagePath={"/images/background.jpg"} />
                     <Internships rowSize={3} />
                     <ScrollProgress />
