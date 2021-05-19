@@ -90,3 +90,30 @@ export const SkillsData = [
             "Technical speaker at webinars, 100 Days of Code Challengee on Instagram and YouTube, and official student-teacher at my university.",
     },
 ];
+
+export const ProjectData = [
+    {
+        project_name: "REV-AMP",
+        description: "Dummy Description is to be added here",
+        link: "https://rev-amp.tech",
+        source: "https://github.com/rev-amp",
+    },
+    {
+        project_name: "100 Days of Code",
+        description: "Dummy Description is to be added here",
+        link: "https://rev-amp.tech",
+        source: "https://github.com/rev-amp",
+    },
+    {
+        project_name: "Hades",
+        description: "Dummy Description is to be added here",
+        link: "https://rev-amp.tech",
+        source: "https://github.com/rev-amp",
+    },
+    {
+        project_name: "100 Days of Code",
+        description: "Dummy Description is to be added here",
+        link: "https://rev-amp.tech",
+        source: "https://github.com/rev-amp",
+    },
+];

@@ -8,6 +8,7 @@ import AnimatedTypingText from "components/AnimatedTypingText/animatedtypingtext
 import Internships from "sections/Internships/internships.section";
 import Intro from "sections/Intro/intro.section";
 import Skills from "sections/Skills/skills.section";
+import Projects from "sections/Projects/projects.section";
 
 import "./main.styles.css";
 
@@ -16,13 +17,14 @@ class Main extends React.Component {
         return (
             <div className="flexbox">
                 <div className="container">
+                    <Background imagePath={"/images/background.jpg"} />
                     <AnimatedTypingText fontSize="30px" color="white" reanimate>
                         Website is still WIP! Check back soon ;)
                     </AnimatedTypingText>
                     <Intro />
                     <Skills />
-                    <Background imagePath={"/images/background.jpg"} />
                     <Internships rowSize={3} />
+                    <Projects />
                     <ScrollProgress />
                 </div>
                 <Footer />

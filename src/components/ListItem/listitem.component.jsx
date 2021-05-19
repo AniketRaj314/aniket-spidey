@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./listitem.styles.css";
 
 const imageVariants = {
@@ -32,14 +32,17 @@ export default function ListItem(props) {
     return (
         <div className="skill-item">
             {Array.isArray(logo) ? (
-                <motion.img
-                    src={logo[logoIndex]}
-                    initial="hidden"
-                    animate="visible"
-                    variants={imageVariants}
-                    className="skill-logo"
-                    alt={skill}
-                />
+                <AnimatePresence>
+                    <motion.img
+                        src={logo[logoIndex]}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={imageVariants}
+                        className="skill-logo"
+                        alt={skill}
+                    />
+                </AnimatePresence>
             ) : (
                 <img src={logo} className="skill-logo" alt={skill} />
             )}
