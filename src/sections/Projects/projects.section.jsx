@@ -68,7 +68,7 @@ function ProjectMiniView(props) {
             animate={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            { ...otherProps }
+            {...otherProps}
         >
             <h2>{project_name}</h2>
             <hr />

@@ -101,7 +101,7 @@ export const ProjectData = [
             {
                 name: "React",
                 color: "#61dbfb",
-                textColor: "black"
+                textColor: "black",
             },
             {
                 name: "FastAPI",
