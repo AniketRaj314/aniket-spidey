@@ -1,58 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { SkillsData } from "data";
-import { AiOutlineUp } from "react-icons/ai";
 import ListItem from "components/ListItem/listitem.component";
 import "./skills.styles.css";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionTitle from "components/SectionTitle/sectiontitle.component";
 
-class Skills extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            rotation: 0,
-            skills: SkillsData,
-            displaySkills: true,
-        };
-    }
-
-    render() {
-        const { rotation, skills, displaySkills } = this.state;
-        return (
-            <div className="skills-section">
-                <div
-                    className="title clickable"
-                    onClick={() => this.setState({ rotation: rotation + 180, displaySkills: !displaySkills })}
-                >
-                    <h1 className="title">Skills</h1>
+export default function Skills() {
+    const [displaySkills, setDisplaySkills] = useState(true);
+    return (
+        <div className="skills-section">
+            <SectionTitle toggleDisplay={() => setDisplaySkills(!displaySkills)}>
+                Skills
+            </SectionTitle>
+            <AnimatePresence>
+                {displaySkills && (
                     <motion.div
-                        animate={{
-                            rotateX: rotation,
-                        }}
+                        className="skills"
+                        initial={{ y: -16 }}
+                        animate={{ y: 0 }}
+                        exit={{ opacity: 0, y: -16 }}
                     >
-                        <AiOutlineUp className="icon" />
+                        {SkillsData.map((item, index) => (
+                            <div className="skill-parent-item">
+                                <ListItem {...item} key={index} />
+                            </div>
+                        ))}
                     </motion.div>
-                </div>
-                <hr />
-                <AnimatePresence>
-                    {displaySkills && (
-                        <motion.div
-                            className="skills"
-                            initial={{ y: -16 }}
-                            animate={{ y: 0 }}
-                            exit={{ opacity: 0, y: -16 }}
-                        >
-                            {skills.map((item, index) => (
-                                <div className="skill-parent-item">
-                                    <ListItem {...item} key={index} />
-                                </div>
-                            ))}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        );
-    }
+                )}
+            </AnimatePresence>
+        </div>
+    );
 }
-
-export default Skills;

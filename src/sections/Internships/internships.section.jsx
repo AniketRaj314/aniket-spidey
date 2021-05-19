@@ -1,9 +1,9 @@
 import React from "react";
 import { InternshipData } from "data";
 import AnimatedCard from "components/AnimatedCard/animatedcard.component";
-import { AiOutlineUp } from "react-icons/ai";
 import "./internships.styles.css";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionTitle from "components/SectionTitle/sectiontitle.component";
 
 class Internships extends React.Component {
     constructor(props) {
@@ -28,26 +28,13 @@ class Internships extends React.Component {
     }
 
     render() {
-        const { internshipGroups, rotation, displayInternships } = this.state;
+        const { internshipGroups, displayInternships } = this.state;
         return (
             internshipGroups && (
                 <div className="internship-section">
-                    <div
-                        className="title clickable"
-                        onClick={() =>
-                            this.setState({ rotation: rotation + 180, displayInternships: !displayInternships })
-                        }
-                    >
-                        <h1 className="title">Internships</h1>
-                        <motion.div
-                            animate={{
-                                rotateX: rotation,
-                            }}
-                        >
-                            <AiOutlineUp className="icon" />
-                        </motion.div>
-                    </div>
-                    <hr />
+                    <SectionTitle toggleDisplay={() => this.setState({ displayInternships: !displayInternships })}>
+                        Internships
+                    </SectionTitle>
                     <AnimatePresence>
                         {displayInternships &&
                             internshipGroups.map((internshipGroup, parentIndex) => (
