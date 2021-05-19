@@ -30,6 +30,10 @@ a {
     cursor: pointer;
 }
 
+.icon--black {
+    color: black;
+}
+
 .flexbox {
     display: flex;
     flex-direction: column;

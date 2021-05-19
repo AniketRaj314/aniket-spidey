@@ -1,66 +1,79 @@
 import React, { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { IoIosCloseCircle } from "react-icons/io";
+
 import { ProjectData } from "data";
 import "./projects.styles.css";
+import SectionTitle from "components/SectionTitle/sectiontitle.component";
+import Pills from "components/Pills/pills.component";
 
 export default function Projects() {
     const [selectedId, setSelectedId] = useState(null);
+    const [displayProjects, setDisplayProjects] = useState(true);
     return (
         <div className="project-section">
-            <AnimateSharedLayout>
-                {ProjectData.map((item, index) => {
-                    if (index % 2 === 0 && index + 1 < ProjectData.length) {
-                        let class1;
-                        let class2;
-                        if ((index / 2) % 2 === 0) {
-                            class1 = "section-1";
-                            class2 = "section-2";
-                        } else {
-                            class1 = "section-2";
-                            class2 = "section-1";
-                        }
-                        return (
+            <SectionTitle toggleDisplay={() => setDisplayProjects(!displayProjects)}>
+                Projects and Initiatives
+            </SectionTitle>
+            <AnimatePresence>
+                {displayProjects && (
+                    <motion.div
+                        className="projects"
+                        initial={{ y: -16 }}
+                        animate={{ y: 0 }}
+                        exit={{ opacity: 0, y: -16 }}
+                    >
+                        <AnimateSharedLayout>
                             <div className="row">
-                                <ProjectMiniView
-                                    {...item}
-                                    setIdOnClick={() => setSelectedId(index + 1)}
-                                    index={index}
-                                    className={`section ${class1}`}
-                                />
-                                <ProjectMiniView
-                                    {...ProjectData[index + 1]}
-                                    setIdOnClick={() => setSelectedId(index + 1 + 1)}
-                                    index={index + 1}
-                                    className={`section ${class2}`}
-                                />
+                                {ProjectData.map((item, index) => (
+                                    <ProjectMiniView
+                                        {...item}
+                                        setIdOnClick={() => setSelectedId(index + 1)}
+                                        index={index}
+                                        className={`section`}
+                                    />
+                                ))}
                             </div>
-                        );
-                    } else {
-                        return null;
-                    }
-                })}
-                <AnimatePresence>
-                    {selectedId && (
-                        <div className="modal" onClick={() => setSelectedId(null)}>
-                            <motion.div className="modal-content" layoutId={selectedId}>
-                                <motion.h2>{ProjectData[selectedId - 1].project_name}</motion.h2>
-                                <motion.h5>{ProjectData[selectedId - 1].description}</motion.h5>
-                                <motion.button onClick={() => setSelectedId(null)}>Click me</motion.button>
-                            </motion.div>
-                        </div>
-                    )}
-                </AnimatePresence>
-            </AnimateSharedLayout>
+                            <AnimatePresence>
+                                {selectedId && (
+                                    <div className="modal" onClick={() => setSelectedId(null)}>
+                                        <motion.div className="modal-content" layoutId={selectedId}>
+                                            <div className="modal-content-header">
+                                                <h2>{ProjectData[selectedId - 1].project_name}</h2>
+                                                <IoIosCloseCircle className="icon icon--black" />
+                                            </div>
+                                            <hr />
+                                            <p>{ProjectData[selectedId - 1].description}</p>
+                                            <h2 style={{ fontSize: "110%", margin: "0" }}>Tags</h2>
+                                            <Pills tags={ProjectData[selectedId - 1].tags} />
+                                        </motion.div>
+                                    </div>
+                                )}
+                            </AnimatePresence>
+                        </AnimateSharedLayout>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
 
 function ProjectMiniView(props) {
-    const { project_name, description, index, flex, setIdOnClick, ...otherProps } = props;
+    const { project_name, description, index, setIdOnClick, tags, ...otherProps } = props;
     return (
-        <motion.div layoutId={index + 1} onClick={setIdOnClick} style={{ flex: flex }} {...otherProps}>
-            <motion.h2>{project_name}</motion.h2>
-            <motion.h5>{description}</motion.h5>
+        <motion.div
+            layoutId={index + 1}
+            onClick={setIdOnClick}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            { ...otherProps }
+        >
+            <h2>{project_name}</h2>
+            <hr />
+            <p>{description}</p>
+            <Pills tags={tags} />
         </motion.div>
     );
 }

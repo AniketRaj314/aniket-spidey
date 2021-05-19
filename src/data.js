@@ -94,26 +94,75 @@ export const SkillsData = [
 export const ProjectData = [
     {
         project_name: "REV-AMP",
-        description: "Dummy Description is to be added here",
+        description: "Reliable Efficient Versatile Academics Management Platform",
         link: "https://rev-amp.tech",
         source: "https://github.com/rev-amp",
-    },
-    {
-        project_name: "100 Days of Code",
-        description: "Dummy Description is to be added here",
-        link: "https://rev-amp.tech",
-        source: "https://github.com/rev-amp",
+        tags: [
+            {
+                name: "React",
+                color: "#61dbfb",
+                textColor: "black"
+            },
+            {
+                name: "FastAPI",
+                color: "#059386",
+            },
+            {
+                name: "PostgreSQL",
+                color: "#2F5E8D",
+            },
+        ],
     },
     {
         project_name: "Hades",
-        description: "Dummy Description is to be added here",
+        description: "Event Management Tool for automated registration",
         link: "https://rev-amp.tech",
         source: "https://github.com/rev-amp",
+        tags: [
+            {
+                name: "HTML",
+                color: "#FC490B",
+            },
+            {
+                name: "CSS",
+                color: "#136DB0",
+            },
+            {
+                name: "Flask",
+                color: "black",
+            },
+        ],
     },
     {
         project_name: "100 Days of Code",
-        description: "Dummy Description is to be added here",
+        description: "To show the fruits of persistance by building mini-projects for 100 days",
         link: "https://rev-amp.tech",
         source: "https://github.com/rev-amp",
+        tags: [
+            {
+                name: "Community Building",
+                color: "green",
+            },
+            {
+                name: "p5.js",
+                color: "#E3245D",
+            },
+        ],
+    },
+    {
+        project_name: "The S.C.R.I.P.T Group",
+        description: "Head Organizer of MIT-WPU's leading Technical Club",
+        link: "https://rev-amp.tech",
+        source: "https://github.com/rev-amp",
+        tags: [
+            {
+                name: "Community Building",
+                color: "green",
+            },
+            {
+                name: "Teaching",
+                color: "blue",
+            },
+        ],
     },
 ];

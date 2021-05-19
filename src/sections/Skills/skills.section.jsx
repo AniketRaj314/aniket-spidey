@@ -9,9 +9,7 @@ export default function Skills() {
     const [displaySkills, setDisplaySkills] = useState(true);
     return (
         <div className="skills-section">
-            <SectionTitle toggleDisplay={() => setDisplaySkills(!displaySkills)}>
-                Skills
-            </SectionTitle>
+            <SectionTitle toggleDisplay={() => setDisplaySkills(!displaySkills)}>Skills</SectionTitle>
             <AnimatePresence>
                 {displaySkills && (
                     <motion.div
