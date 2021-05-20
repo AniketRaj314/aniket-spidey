@@ -95,8 +95,7 @@ export const ProjectData = [
     {
         project_name: "REV-AMP",
         description: "Reliable Efficient Versatile Academics Management Platform",
-        link: "https://rev-amp.tech",
-        source: "https://github.com/rev-amp",
+        links: ["https://rev-amp.tech", "https://github.com/rev-amp"],
         tags: [
             {
                 name: "React",
@@ -116,8 +115,7 @@ export const ProjectData = [
     {
         project_name: "Hades",
         description: "Event Management Tool for automated registration",
-        link: "https://rev-amp.tech",
-        source: "https://github.com/rev-amp",
+        links: ["https://hades.thescriptgroup.in", "https://github.com/The-SCRIPT-Group/Hades"],
         tags: [
             {
                 name: "HTML",
@@ -136,8 +134,7 @@ export const ProjectData = [
     {
         project_name: "100 Days of Code",
         description: "To show the fruits of persistance by building mini-projects for 100 days",
-        link: "https://rev-amp.tech",
-        source: "https://github.com/rev-amp",
+        links: ["https://instagram.com/spidey_codes", "https://twitter.com/AniketRaj314"],
         tags: [
             {
                 name: "Community Building",
@@ -152,8 +149,13 @@ export const ProjectData = [
     {
         project_name: "The S.C.R.I.P.T Group",
         description: "Head Organizer of MIT-WPU's leading Technical Club",
-        link: "https://rev-amp.tech",
-        source: "https://github.com/rev-amp",
+        links: [
+            "https://thescriptgroup.in",
+            "https://github.com/The-SCRIPT-Group",
+            "https://www.instagram.com/script.ig/",
+            "https://www.youtube.com/channel/UCjoxLu4mu4q9a7j3sy-unmQ",
+            "https://twitter.com/scriptgroup",
+        ],
         tags: [
             {
                 name: "Community Building",

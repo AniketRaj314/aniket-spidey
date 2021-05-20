@@ -45,6 +45,11 @@
     align-items: center;
 }
 
+.modal-content-footer {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (min-width: 768px) {
     .row {
         flex-direction: row;
@@ -52,5 +57,13 @@
 
     .modal-content {
         width: 50%;
+    }
+
+    .modal-content-footer {
+        flex-direction: row;
+    }
+
+    .modal-content-footer div {
+        flex: 1;
     }
 }

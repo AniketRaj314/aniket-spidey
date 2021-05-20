@@ -6,6 +6,7 @@ import { ProjectData } from "data";
 import "./projects.styles.css";
 import SectionTitle from "components/SectionTitle/sectiontitle.component";
 import Pills from "components/Pills/pills.component";
+import IconByUrl from "components/IconByUrl/iconbyurl.component";
 
 export default function Projects() {
     const [selectedId, setSelectedId] = useState(null);
@@ -43,9 +44,26 @@ export default function Projects() {
                                                 <IoIosCloseCircle className="icon icon--black" />
                                             </div>
                                             <hr />
+
                                             <p>{ProjectData[selectedId - 1].description}</p>
-                                            <h2 style={{ fontSize: "110%", margin: "0" }}>Tags</h2>
-                                            <Pills tags={ProjectData[selectedId - 1].tags} />
+
+                                            <div className="modal-content-footer">
+                                                <div className="modal-content-tags">
+                                                    <h2 style={{ fontSize: "110%", margin: "0" }}>Tags</h2>
+                                                    <Pills tags={ProjectData[selectedId - 1].tags} />
+                                                </div>
+
+                                                <div className="modal-content-links">
+                                                    <h2 style={{ fontSize: "110%", margin: "0" }}>Links</h2>
+                                                    {ProjectData[selectedId - 1].links.map((url) => (
+                                                        <IconByUrl
+                                                            url={url}
+                                                            className="icon"
+                                                            style={{ color: "black" }}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </motion.div>
                                     </div>
                                 )}
