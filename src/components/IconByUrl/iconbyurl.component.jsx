@@ -24,7 +24,7 @@ export default function IconByUrl(props) {
     const domain = getDomain(url);
 
     return (
-        <a href={url} rel="noreferrer" className="urlIcon">
+        <a href={url} rel="noreferrer" className="urlIcon" target="_blank">
             {iconDictionary[domain] ?? <FiGlobe {...otherProps} />}
         </a>
     );
