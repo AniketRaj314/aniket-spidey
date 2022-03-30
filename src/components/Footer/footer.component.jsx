@@ -71,7 +71,7 @@ export default function Footer() {
                 </motion.p>
                 <div className="footer-icons">
                     <motion.a
-                        href="https://github.com/aniket-spidey"
+                        href="https://github.com/AniketRaj314"
                         rel="noreferrer"
                         target="_blank"
                         custom={0}
