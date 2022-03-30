@@ -37,6 +37,9 @@ export default function Intro() {
                 <AnimatedTypingText fontSize="30px" color="white" reanimate>
                     Aniket Raj
                 </AnimatedTypingText>
+                <AnimatedTypingText fontSize="24px" color="white" reanimate>
+                    Community Lead, Devfolio
+                </AnimatedTypingText>
             </div>
             <div className="column">
                 <div style={{ display: "flex", alignItems: "center" }}>
