@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AiFillGithub, AiOutlineInstagram, AiOutlineTwitter, AiOutlineMail, AiFillFileText } from "react-icons/ai";
+import { AiFillGithub, AiOutlineInstagram, AiOutlineTwitter, AiOutlineMail } from "react-icons/ai";
 import { FaTelegramPlane, FaReact } from "react-icons/fa";
 import { SiFramer } from "react-icons/si";
 import { motion, useAnimation } from "framer-motion";
@@ -129,19 +129,6 @@ export default function Footer() {
 						variants={iconsVariant}
 					>
 						<AiOutlineMail className="icon" />
-					</motion.a>
-					<motion.a
-						href={"/Aniket_Raj_Resume.pdf"}
-						rel="noreferrer"
-						target="_blank"
-						custom={5}
-						initial="hidden"
-						whileHover="hover"
-						animate={controls}
-						variants={iconsVariant}
-						download
-					>
-						<AiFillFileText className="icon" />
 					</motion.a>
 				</div>
 
